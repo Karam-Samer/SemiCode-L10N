@@ -118,4 +118,6 @@ $navLinks.click(function (e) {
 });
 
 
-$(".loading").fadeOut(5000);
+$(window).on("load", function () {
+    $(".loading").fadeOut(500);
+});

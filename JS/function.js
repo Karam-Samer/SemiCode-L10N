@@ -72,5 +72,5 @@ function fillLi(li) {
 }
 
 function TopOfPage(){
-    $("window").scrollTop(0);
+    $(window).scrollTop(0);
 }

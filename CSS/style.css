@@ -235,6 +235,10 @@ section {
   justify-content: center;
 }
 
+footer {
+  background-color: #333;
+}
+
 nav.navbar {
   position: fixed;
   top: 0;
