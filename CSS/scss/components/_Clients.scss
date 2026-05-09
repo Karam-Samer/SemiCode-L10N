@@ -1,0 +1,35 @@
+@use "./../abstracts" as *;
+
+#Clients {
+    .owl-carousel {
+        .item {
+            width: 70%;
+            @include flex($dir: column);
+
+            @include respond(450) {
+                width: 50%;
+            }
+
+            @include respond(650) {
+                width: 70%;
+            }
+        }
+
+        .owl-dots {
+            margin-top: 20px;
+            @include flex();
+
+            .owl-dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: rgba(238, 94, 0, 0.5);
+                margin: 0 5px;
+
+                &.active {
+                    background-color: $secondColor;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@use "./../abstracts" as *;
+
+#Services {
+    .item {
+        width: 90%;
+        margin: auto auto 25px;
+        transition-duration: 0.5s;
+
+        @include respond(350) {
+            width: 100%;
+        }
+
+        @include respond(450) {
+            width: 85%;
+        }
+
+        @include respond(850) {
+            width: 90%;
+        }
+
+        &:hover {
+            background-color: #fff;
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px #00000080;
+        }
+
+        img {
+            width: 64px;
+            height: 64px;
+        }
+
+        p {
+            width: 80%;
+            margin: auto;
+
+            @include respond(350) {
+                width: 90%;
+            }
+        }
+    }
+}

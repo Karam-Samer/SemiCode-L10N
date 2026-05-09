@@ -1,0 +1,117 @@
+@use "./../abstracts" as *;
+
+header {
+    height: 100vh;
+    position: relative;
+
+    @include respond(350) {
+        height: calc(100vh - 85px);
+        margin-top: 85px;
+    }
+
+    @include respond(850) {
+        height: 100vh;
+        margin-top: 0;
+    }
+
+    .part1 {
+        @include flex($jc: flex-start);
+
+        .item {
+            h1 {
+                font-size: clamp(2.1875rem, 1.4154rem + 3.5294vw, 4.0625rem);
+            }
+
+            p {
+                font-size: clamp(0.875rem, 0.829rem + 0.2103vw, 1rem);
+            }
+        }
+
+        .cd-headline {
+            .cd-words-wrapper::after {
+                background-color: $secondColor;
+            }
+
+            .cd-words-wrapper b {
+                @include respond(350) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .play {
+            @include flex($jc: flex-start);
+
+            i {
+                @include distance(45px, 45px);
+                @include flex();
+                border-radius: 100%;
+                color: $firstColor;
+                position: relative;
+                overflow: hidden;
+
+                &::before {
+                    z-index: 2;
+                }
+
+                &::after {
+                    @include createEle(0, 0);
+                    @include position($t: 50%, $l: 50%);
+                    border-radius: 100%;
+                    transform: translate(-50%, -50%);
+                    background-color: $firstColor;
+                    transition-duration: 0.5s;
+                }
+
+                &:hover {
+                    color: #fff;
+
+                    &::after {
+                        @include distance(100%, 100%);
+                    }
+                }
+            }
+
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .part2 {
+        @include flex();
+
+        .item {
+            @include respond(350) {
+                width: 250px;
+            }
+
+            @include respond(650) {
+                width: 300px;
+            }
+        }
+    }
+
+    .arrows {
+        @include position($b: 10%, $l: 50%);
+        transform: translateX(-50%);
+        z-index: 2;
+
+        img {
+            width: 24px;
+            @include position($t: 0, $l: 0);
+
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    @include moveDown($i);
+                }
+            }
+        }
+    }
+
+    >img {
+        width: 100%;
+        @include position($b: 0, $l: 0);
+        transform: rotate(180deg);
+    }
+}

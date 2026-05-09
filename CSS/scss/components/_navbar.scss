@@ -1,0 +1,121 @@
+@use "./../abstracts" as *;
+
+nav.navbar {
+    @include position($p: fixed, $t: 0, $l: 0);
+    width: 100%;
+    z-index: 20;
+
+    &.scrolled {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .navbar-brand {
+        width: 8%;
+
+        @include respond(350) {
+            width: 30%;
+        }
+
+        @include respond(450) {
+            width: 25%;
+        }
+
+        @include respond(650) {
+            width: 20%;
+        }
+
+        @include respond(850) {
+            width: 15%;
+        }
+
+        @include respond(1050) {
+            width: 10%;
+        }
+
+        @include respond(1200) {
+            width: 8%;
+        }
+    }
+
+    .navbar-nav {
+        @include respond(350) {
+            background-color: #fff;
+            text-align: center;
+            box-shadow: #00000029 0 10px 36px, #0000000f 0 0 0 1px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        @include respond(1050) {
+            background-color: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            margin-top: 0;
+        }
+
+        .nav-item {
+
+
+            &:not(:last-child) {
+                margin-right: 15px;
+
+                @include respond(350) {
+                    margin-right: 0;
+                    margin-bottom: 15px;
+                }
+
+                @include respond(1050) {
+                    margin-bottom: 0;
+                    margin-right: 15px;
+                }
+            }
+
+
+            @include respond(350) {
+                margin-inline: 15px;
+            }
+
+            @include respond(1050) {
+                margin-inline: 0;
+            }
+
+            .nav-link {
+                color: $firstColor;
+                font-weight: bold;
+                position: relative;
+                padding-inline: 0;
+
+
+                &::before {
+                    @include createEle($h: 3px);
+                    @include position($b: -2px, $l: 0);
+                    transform: scaleX(0);
+                    background-color: $secondColor;
+                    transition-duration: 0.5s;
+                }
+
+                &:hover,
+                &.active {
+                    &::before {
+                        transform: scaleX(1);
+                        width: 100%;
+                    }
+                }
+            }
+
+            &:last-child {
+                .nav-link::before {
+                    bottom: 0;
+                }
+
+                .nav-link::after {
+                    display: none;
+                }
+
+                ul {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

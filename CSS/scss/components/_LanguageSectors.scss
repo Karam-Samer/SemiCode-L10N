@@ -1,0 +1,40 @@
+@use "./../abstracts" as *;
+
+#LanguageSectors {
+    @include backgroundImg("./../images/youth.jpg");
+    position: relative;
+
+    &::before {
+        @include createEle();
+        @include position($t: 0, $l: 0);
+        @include distance($h: 100%);
+        background: radial-gradient(#68b703, #305d00);
+        opacity: 0.8;
+    }
+
+    .title {
+        h2 {
+            color: #fff;
+
+            &::after {
+                background-color: #fff;
+            }
+        }
+    }
+
+    .content {
+        @include flex();
+
+        button {
+            background-color: #fff;
+            color: $secondColor;
+            font-weight: bold;
+            transform: translateY(0);
+            transition-duration: 0.5s;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+    }
+}

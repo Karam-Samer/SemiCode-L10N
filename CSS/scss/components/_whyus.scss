@@ -1,0 +1,64 @@
+@use "./../abstracts" as *;
+$images: (
+    "best.jpg",
+    "solutions.jpg",
+    "teamwork.jpg"
+);
+
+#WhyUs {
+    .part {
+        &:not(:last-child) {
+            .item {
+                margin-bottom: 20px;
+            }
+        }
+
+        .item {
+            max-width: 350px;
+            margin: auto;
+            background-color: $secondColor;
+
+            &:hover {
+                .box {
+                    transform: translate(-10px, 10px);
+                }
+            }
+
+
+
+
+            .box {
+                height: 450px;
+                @include flex(start, end, column);
+                padding: 20px;
+                position: relative;
+                overflow: hidden;
+                transition-duration: 0.5s;
+
+                p,
+                h3 {
+                    color: #fff;
+                    position: relative;
+                }
+
+                h3 {
+                    font-weight: bold;
+                }
+
+                &::before {
+                    @include createEle($h: 100%);
+                    @include position($t: 0, $l: 0);
+                    background: linear-gradient(0deg, #1e2022 0%, transparent 75%);
+                }
+            }
+        }
+
+        @for $i from 1 through length($images) {
+            &:nth-child(#{$i}) {
+                .item .box {
+                    @include backgroundImg("./../images/#{nth($images, $i)}");
+                }
+            }
+        }
+    }
+}

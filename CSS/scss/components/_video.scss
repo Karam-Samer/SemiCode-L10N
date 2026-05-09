@@ -1,0 +1,35 @@
+@use "./../abstracts" as *;
+
+#Video {
+    @include backgroundImg("./../images/video-bg.jpg");
+    position: relative;
+
+    &::before {
+        @include createEle();
+        @include position($t: 0, $l: 0);
+        @include distance($h: 100%);
+        background: radial-gradient(#68b703, #305d00);
+        opacity: 0.8;
+    }
+
+    .title {
+        h2 {
+            color: #fff;
+
+            &::after {
+                background-color: #fff;
+            }
+        }
+    }
+
+    .container {
+        position: relative;
+
+
+        .content i {
+            font-size: 70px;
+            color: #fff;
+        }
+    }
+
+}

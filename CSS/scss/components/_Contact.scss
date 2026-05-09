@@ -1,0 +1,82 @@
+@use "./../abstracts" as *;
+
+#ContactUs {
+    @include backgroundImg("./../images/contact-bg.png");
+    position: relative;
+
+    &::before {
+        @include createEle();
+        @include position($t: 0, $l: 0);
+        @include distance($h: 100%);
+        background: radial-gradient(#68b703, #305d00);
+        opacity: 0.8;
+    }
+
+    .title {
+        h2 {
+            color: #fff;
+
+            &::after {
+                background-color: #fff;
+            }
+        }
+    }
+
+    .content {
+        position: relative;
+        &>p{
+            color: #fff;
+        }
+
+        .item {
+            height: 100%;
+
+            .box {
+                background-color: #fff;
+                border-radius: 15px;
+                height: 100%;
+
+                @include respond(450) {
+                    width: 75%;
+                    margin: auto;
+                }
+
+                form {
+                    textarea {
+                        resize: none;
+                    }
+
+                    button {
+                        background-color: $secondColor;
+                        color: #fff;
+                    }
+                }
+
+                .icon i {
+                    color: $secondColor;
+                    font-size: 18px;
+                }
+
+                .social {
+                    color: #fff;
+                    font-size: 18px;
+                    @include distance($w: 40px, $h: 40px);
+                    border-radius: 100%;
+                    @include flex();
+
+                    &:nth-of-type(1) {
+                        background-color: darkblue;
+                    }
+
+                    &:nth-of-type(2) {
+                        background-color: #b4116d;
+                    }
+
+                    &:nth-of-type(3) {
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+}
