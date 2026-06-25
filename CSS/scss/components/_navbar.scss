@@ -70,15 +70,6 @@ nav.navbar {
                 }
             }
 
-
-            @include respond(350) {
-                margin-inline: 15px;
-            }
-
-            @include respond(1050) {
-                margin-inline: 0;
-            }
-
             .nav-link {
                 color: $firstColor;
                 font-weight: bold;

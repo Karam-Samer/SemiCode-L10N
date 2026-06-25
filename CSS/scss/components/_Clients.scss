@@ -2,16 +2,22 @@
 
 #Clients {
     .owl-carousel {
-        .item {
-            width: 70%;
-            @include flex($dir: column);
-
-            @include respond(450) {
-                width: 50%;
+        .owl-stage {
+            display: flex;
+            .owl-item{
+                @include flex()
             }
-
-            @include respond(650) {
+            .item {
                 width: 70%;
+                @include flex($dir: column);
+
+                @include respond(450) {
+                    width: 50%;
+                }
+
+                @include respond(650) {
+                    width: 70%;
+                }
             }
         }
 
