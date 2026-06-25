@@ -575,6 +575,9 @@ header > img {
     width: 90%;
   }
 }
+#Services .item p span.click {
+  cursor: pointer;
+}
 
 #Video {
   background-image: url("./../images/video-bg.jpg");
@@ -712,7 +715,7 @@ header > img {
   color: #ee5e00;
   font-weight: bold;
   transform: translateY(0);
-  transition-duration: 0.5s;
+  transition: transform 0.25s linear;
 }
 #LanguageSectors .content button:hover {
   transform: translateY(-5px);

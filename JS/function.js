@@ -21,7 +21,7 @@ function closePopup() {
 function fillServices(index) {
     let service = services[index];
     $(`.popup[data-name='Services'] .box .body`).html(`
-                        <h4 class="text-center mb-5 secondColor">${service.name}</h4>
+                        <h4 class="text-center mb-5 secondColor">${service.title}</h4>
                 <div class="row mb-5">
                     <div class="col-lg-6 part1">
                         <div class="item">

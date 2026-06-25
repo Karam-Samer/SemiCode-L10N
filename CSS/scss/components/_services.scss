@@ -36,6 +36,9 @@
             @include respond(350) {
                 width: 90%;
             }
+            span.click{
+                cursor: pointer;
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ let services = null,
                             <img src="images/${service.icon}" alt="">
                             <h5 class="my-3">${service.title}</h5>
                             <p>${l10NHouseFilter(service.description.substring(0, 150))}...
-                            <span class="firstColor" onclick="openPopup('Services', ${index})">Read More</span></p>
+                            <span class="firstColor click" onclick="openPopup('Services', ${index})">Read More</span></p>
                         </div>
                     </div>
         `);
